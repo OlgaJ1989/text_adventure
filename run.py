@@ -1,3 +1,19 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+import sys
+import time
+
+
+print()
+print()
+print("     ##############################")
+print("     #                            #")
+print("     #          STRANDED          #")
+print("     #                            #")
+print("     ##############################")
+print()
+print()
+time.sleep(3)
+print("That was meant to be a holiday of your lifetime.")
+print("Everything went well at first... ")
+print()
+time.sleep(3)
+print("... until the turbulence started....")
