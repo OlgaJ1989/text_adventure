@@ -2,6 +2,10 @@ import sys
 import time
 
 
+global pork
+pork = False
+
+
 def display_intro():
     """
     Displays game intro
@@ -173,7 +177,7 @@ def choice_two():
             continue
 
 
-# go inland
+# go inland - boar
 def choice_four():
     """
     Runs every time user decides to go inland.
@@ -199,17 +203,22 @@ def choice_four():
     print("The beast charges at you! What do you do?!")
     time.sleep(2)
     print()
-    print("1. Throw your knife at it!")
-    print("2. Fight it with your bare hands!")
-    print("3. Run for your life!")
+    print("1. Fight it with your bare hands!")
+    print("2. Run for your life!")
+    if knife == "yes":
+        print("3. Throw your knife at it!")
     print()
-    choice_five = input("What do you do? (1/2/3): ")
-    print()
+    if knife == "yes":
+        boar_text = "(1/2/3)"
+    else:
+        boar_text = "(1/2)"
     while True:
-        if choice_five == "1":
+        choice_five = input(f"What do you do? {boar_text}")
+        print()
+        if choice_five == "3" and knife == "yes":
             choice_six()
             break
-        elif choice_five == "2":
+        elif choice_five == "1":
             print("You put up a fight but you're no match for a boar...")
             time.sleep(2)
             print("The boar gored you and you bled out within minutes...")
@@ -217,13 +226,47 @@ def choice_four():
             time.sleep(3)
             print("THE END")
             break
-        elif choice_five == "3":
+        elif choice_five == "2":
             choice_seven()
             break
         else:
-            print("Wrong input. Please choose option 1, 2 or 3.")
+            print(f"Wrong input. Please choose option {boar_text}")
             continue
-        
+
+
+def choice_six():
+    print("Good aim! You caught the boar right between the eyes!")
+    time.sleep(2)
+    print("You have pork!")
+    global pork
+    pork = True
+    print()
+    continue_without_choice()
+
+
+def continue_without_choice():
+    print("You carry on towards higher ground until you reach an outcrop.")
+    time.sleep(2)
+    print("You see a cave and decide to inspect it.")
+    time.sleep(2)
+    print("Wrong idea... You disturb...")
+    time.sleep(3)
+    print()
+    bear_string = "A BEAR!!!"
+    for character in bear_string:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.2)
+    time.sleep(2)
+    print()
+    print("Oh no! Think fast! What are the options?")
+    print()
+    print("1. Fight the bear...")
+    print("2. Run for your life!")
+    if pork is True:
+        print("3. Distract the bear with pork.")
+    print("3. Scare it off with a flare gun.")
+
 
 display_intro()
 start_game()
