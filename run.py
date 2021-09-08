@@ -2,6 +2,7 @@ import sys
 import time
 
 
+# Global variables
 global knife
 knife = "no"
 global pork
@@ -12,7 +13,7 @@ flare_gun = "no"
 
 def display_intro():
     """
-    Displays game intro
+    Displays game intro and title
     """
     print()
     print("That was meant to be a holiday of your lifetime.")
@@ -49,13 +50,14 @@ def display_intro():
     print("you are on what seems like a deserted island.")
     print()
     time.sleep(3)
+    start_game()
 
 
 def start_game():
     """
     Starts the game, asking the user whether they want to get off the island
-    or not. If not, game ends. If yes, game continues. If incorrect
-    input provided, user is asked the question again.
+    or not. If not, game ends. If yes, game continues to get_username function.
+    If incorrect input provided, user is asked the question again.
     """
     while True:
         print("Would you like to try to find a way")
@@ -83,9 +85,11 @@ def start_game():
 
 def get_username():
     """
-    Continues with the story, asks user to input a name.
-    If no input, user asked again. If input provided, game continues.
-    Asks user for their first decision.
+    Continues with the story, asks user to input a name. If no input,
+    user asked again. If input provided, game continues giving the user
+    three directions to choose from: right (choice_two function), left
+    (choice_eight function), inland (choice_four function). If incorrect input
+    provided, user is asked the question again.
     """
     print("Great! You made a life-changing decision!")
     time.sleep(2)
@@ -131,9 +135,11 @@ def get_username():
 # go right
 def choice_two():
     """
-    User finds a knife and is asked whether they would like to
-    take it or not. The story proceeds either way and the user is asked
-    to choose direction again.
+    Asks the user whether they would like to pick up a knife they found.
+    Whether the user picks it up or not, the story proceeds the same way and
+    the user is asked to choose again. Choice 'stay' means GAME OVER.
+    Choice 'go' leads to choice_four function (inland). If incorrect input
+    provided, user is asked the question again.
     """
     print("You walk until you spot more wreckage from your plane.")
     time.sleep(2)
@@ -185,10 +191,15 @@ def choice_two():
             continue
 
 
-# go inland - boar
+# go inland
 def choice_four():
     """
-    Runs every time user decides to go inland.
+    Runs every time user decides to go inland. User encounters a boar and is
+    given a choice of what to do to survive. Option 1 leads to GAME OVER,
+    option 2 leads to choice_seven function (stream) and continues with the
+    story. Option 3 appears only if user decided to pick up the knife earlier
+    (as it suggests throwing it at the bear) and leads to choice_six function.
+    If incorrect input provided, user is asked the question again.
     """
     print("You walk inland toward higher ground.")
     time.sleep(2)
@@ -224,7 +235,13 @@ def choice_four():
         choice_five = input(f"What do you do? {boar_text}")
         print()
         if choice_five == "3" and knife == "yes":
-            continue_without_choice()
+            print("Good aim! You caught the boar right between the eyes!")
+            time.sleep(2)
+            print("You have pork!")
+            global pork
+            pork = True
+            print()
+            choice_six()
             break
         elif choice_five == "1":
             print("You put up a fight but you're no match for a boar...")
@@ -243,17 +260,15 @@ def choice_four():
             continue
 
 
-def continue_without_choice():
-    print("Good aim! You caught the boar right between the eyes!")
-    time.sleep(2)
-    print("You have pork!")
-    global pork
-    pork = True
-    print()
-    choice_six()
-
-
+# bear
 def choice_six():
+    """
+    User encounters a bear and is given a choice of what to do to survive.
+    Options 1 and 2 lead to GAME OVER. There are two versions of option 3.
+    One appears only if user has pork and the other appears only if user has
+    a flare gun. Both version of option 3 lead to choice_nine function. If
+    incorrect input provided, user is asked the question again.
+    """
     print("You carry on towards higher ground until you reach an outcrop.")
     time.sleep(2)
     print("You see a cave and decide to inspect it.")
@@ -314,7 +329,13 @@ def choice_six():
             print("Wrong input. Please choose ")
 
 
+# stream
 def choice_seven():
+    """
+    User asked whether they want to go downstream or upstream. 'Upstream'
+    leads to choice_six function and 'downstream' leads to mushrooms function.
+    If incorrect input provided, user is asked the question again.
+    """
     print()
     print("You run as fast as you can and eventually loose the boar.")
     time.sleep(2)
@@ -345,7 +366,13 @@ def choice_seven():
             continue
 
 
+# mushrooms
 def mushrooms():
+    """
+    Asks user to make a decision about eating mushrooms. 'Eat' leads to GAME
+    OVER. 'Ignore' leads to a WIN. If incorrect input provided, user is asked
+    the question again.
+    """
     print("You spot some mushrooms at the edge of the beach.")
     time.sleep(2)
     print("You know they might be poisonous but you're really hungry.")
@@ -378,7 +405,12 @@ def mushrooms():
             print("Wrong input. Please type 'eat' or 'ignore'.")
 
 
+# go left / flare gun
 def choice_eight():
+    """
+    Asks user whether they want to pick up a flare gun. Both choices lead to
+    choice_six function. If wrong input provided, user asked again.
+    """
     print("You walk towards the setting sun.")
     time.sleep(2)
     print("Eventually you find the plane's cockpit.")
@@ -408,7 +440,12 @@ def choice_eight():
     choice_six()
 
 
+# hill top
 def choice_nine():
+    """
+    Checks if user picked up the flare gun. If yes, user wins. If no, GAME
+    OVER.
+    """
     print("After escaping the bear, you walk until you reach the hill top.")
     time.sleep(2)
     print("Suddenly, you see a plane in the sky!")
@@ -446,7 +483,13 @@ def choice_nine():
         play_again()
 
 
+# restart game
 def play_again():
+    """
+    Called every time a game is lost or won. Asks user whether they would like
+    to play again. If not, goodbye message is displayed. If Yes, play_game
+    function is called again.
+    """
     while True:
         play_again = input("Would you like to play again? (yes/no)")
         if play_again == "yes":
@@ -467,4 +510,3 @@ def play_again():
 
 
 display_intro()
-start_game()
