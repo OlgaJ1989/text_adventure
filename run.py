@@ -62,7 +62,6 @@ def start_game():
     while True:
         print("Would you like to try to find a way")
         leave_island = input("to leave the island? (yes/no): ")
-        print()
         if leave_island == "no":
             print("Well, it was nice knowing you...")
             time.sleep(2)
@@ -122,17 +121,20 @@ def get_username():
             break
         elif choice_one == "left":
             choice_eight()
+            print()
             break
         elif choice_one == "inland":
             choice_four()
+            print()
             break
         else:
             print()
             print("Wrong input. Please type 'left', 'right' or 'inland'.")
+            print()
             continue
 
 
-# go right
+# go right / knife
 def choice_two():
     """
     Asks the user whether they would like to pick up a knife they found.
@@ -147,20 +149,16 @@ def choice_two():
     time.sleep(2)
     print("You find a knife!")
     time.sleep(2)
-    print()
     while True:
         global knife
         knife = input("Do you take it? (yes/no): ")
         if knife == "yes":
-            print()
             print("Good choice! That might come in handy!")
             break
         elif knife == "no":
-            print()
             print("Well, let's hope you will not live to regret it!")
             break
         else:
-            print()
             print("Wrong input. Please type 'yes' or 'no'.")
             continue
     print()
@@ -191,7 +189,7 @@ def choice_two():
             continue
 
 
-# go inland
+# go inland / boar
 def choice_four():
     """
     Runs every time user decides to go inland. User encounters a boar and is
@@ -232,7 +230,7 @@ def choice_four():
     else:
         boar_text = "(1/2)"
     while True:
-        choice_five = input(f"What do you do? {boar_text}")
+        choice_five = input(f"What do you do? {boar_text}: ")
         print()
         if choice_five == "3" and knife == "yes":
             print("Good aim! You caught the boar right between the eyes!")
@@ -250,6 +248,7 @@ def choice_four():
             print()
             time.sleep(3)
             print("GAME OVER")
+            print()
             play_again()
             break
         elif choice_five == "2":
@@ -293,8 +292,13 @@ def choice_six():
         print("3. Scare it off with a flare gun.")
     print()
     time.sleep(2)
+    if pork is True or flare_gun == "yes":
+        bear_text = "(1/2/3)"
+    else:
+        bear_text = "(1/2)"
     while True:
-        bear_choice = input("Which option do you choose? ")
+        bear_choice = input(f"Which option do you choose? {bear_text}: ")
+        print()
         if bear_choice == "1":
             print("Nice try but you're no match for the bear. ")
             time.sleep(2)
@@ -302,6 +306,7 @@ def choice_six():
             print()
             time.sleep(3)
             print("GAME OVER")
+            print()
             play_again()
             break
         elif bear_choice == "2":
@@ -311,6 +316,7 @@ def choice_six():
             time.sleep(3)
             print()
             print("GAME OVER")
+            print()
             play_again()
             break
         elif bear_choice == "3" and pork is True:
@@ -326,7 +332,8 @@ def choice_six():
             choice_nine()
             break
         else:
-            print("Wrong input. Please choose ")
+            print(f"Wrong input. Please choose {bear_text}.")
+            continue
 
 
 # stream
@@ -336,7 +343,6 @@ def choice_seven():
     leads to choice_six function and 'downstream' leads to mushrooms function.
     If incorrect input provided, user is asked the question again.
     """
-    print()
     print("You run as fast as you can and eventually loose the boar.")
     time.sleep(2)
     print("When you stop to catch your breath, you hear flowing water.")
@@ -396,6 +402,7 @@ def mushrooms():
             print("Water keeps you alive long enough for the plane")
             print("to spot and rescue you.")
             time.sleep(2)
+            print()
             print("Well done! YOU WON!!!")
             time.sleep(3)
             print()
@@ -421,22 +428,22 @@ def choice_eight():
         global flare_gun
         flare_gun = input("Do you take it with you? (yes/no): ")
         if flare_gun == "yes":
-            print()
             print("Good choice! That might come in handy!")
+            print()
             break
         elif flare_gun == "no":
-            print()
             print("Well, let's hope you will not live to regret it!")
+            print()
             break
         else:
             print()
             print("Wrong input. Please type 'yes' or 'no'.")
+            print()
             continue
     print()
     time.sleep(2)
     print("Past the wreckage, a river flows into the ocean.")
     time.sleep(2)
-    print()
     choice_six()
 
 
@@ -491,7 +498,8 @@ def play_again():
     function is called again.
     """
     while True:
-        play_again = input("Would you like to play again? (yes/no)")
+        play_again = input("Would you like to try again? (yes/no): ")
+        print()
         if play_again == "yes":
             global knife
             knife = "no"
@@ -502,7 +510,7 @@ def play_again():
             start_game()
             break
         elif play_again == "no":
-            print("Thanks for playing!")
+            print("That's a shame... Thanks for playing!")
             break
         else:
             print("Wrong input. Please type 'yes' or 'no'.")
