@@ -359,7 +359,7 @@ def choice_seven():
         elif stream == "downstream":
             print("You eventually end up on the beach")
             time.sleep(2)
-            print("with plenty of rocks and branches lying.")
+            print("with plenty of rocks and branches lying around.")
             time.sleep(2)
             print("You make a sign big enough for passing planes to see.")
             time.sleep(2)
