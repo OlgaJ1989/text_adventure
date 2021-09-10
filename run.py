@@ -17,38 +17,29 @@ def display_intro():
     """
     print()
     print("That was meant to be a holiday of your lifetime.")
-    print("Everything went well at first... ")
-    print()
+    print("Everything went well at first...\n ")
     time.sleep(3)
-    print("...until the turbulence started...")
-    print()
+    print("...until the turbulence started...\n")
     time.sleep(2)
-    print("...followed by darkness...")
+    print("...followed by darkness...\n")
     time.sleep(2)
-    print()
-    print("You wake up after what feels like hours,")
-    print("only to realise your plane crashed and you are...")
-    print()
-    print()
+    print("You wake up after what feels like hours,\n" +
+          "only to realise your plane crashed and you are...\n\n")
     time.sleep(4)
     print("     ##############################")
     print("     #                            #")
     print("     #          STRANDED          #")
     print("     #                            #")
-    print("     ##############################")
-    print()
-    print()
+    print("     ##############################\n\n")
     time.sleep(2)
     print("You look around the cabin.")
-    print("You seem to be the only one that survived.")
-    print()
-    time.sleep(3)
-    print("You're on your own...")
-    print()
     time.sleep(2)
-    print("Through one of the remaining windows, you can see that")
-    print("you are on what seems like a deserted island.")
-    print()
+    print("You seem to be the only one that survived.\n")
+    time.sleep(3)
+    print("You're on your own...\n")
+    time.sleep(2)
+    print("Through one of the remaining windows, you can see that\n" +
+          "you are on what seems like a deserted island.\n")
     time.sleep(3)
     start_game()
 
@@ -60,25 +51,21 @@ def start_game():
     If incorrect input provided, user is asked the question again.
     """
     while True:
-        print("Would you like to try to find a way")
-        leave_island = input("to leave the island? (yes/no): ")
+        leave_island = input("Would you like to find a way " +
+                             "to leave the island? (yes/no):\n")
         if leave_island == "no":
             print("Well, it was nice knowing you...")
             time.sleep(2)
-            print("Enjoy a slow and painful death from dehydration...")
-            print()
+            print("Enjoy a slow and painful death from dehydration...\n")
             time.sleep(3)
-            print("GAME OVER")
-            print()
+            print("GAME OVER\n")
             play_again()
-            print()
             break
         elif leave_island == "yes":
             get_username()
             break
         else:
             print("Wrong input. Please type 'yes' or 'no'.")
-            print()
             continue
 
 
@@ -96,41 +83,31 @@ def get_username():
     time.sleep(2)
     print("You might have a concusion as the details of the crash are blurry.")
     time.sleep(2)
-    print()
     while True:
-        name = input("Do you remember who you are? (type name): ")
+        name = input("Do you remember who you are? (type name):\n")
         if name == "":
-            print()
             print("Wrong input. Please provide a name.")
             continue
         else:
-            print()
             print(f"Hello, {name}!")
             break
-    print()
     print("The tide is coming in, you should get a move on!")
     time.sleep(2)
-    print("You can go left along the shore, right along the shore,")
-    time.sleep(2)
-    print("or inland towards higher ground.")
-    print()
+    print("You can go left along the shore, right along the shore,\n" +
+          "or inland towards higher ground.")
     while True:
-        choice_one = input("Which way will you go? (left/right/inland): ")
+        choice_one = input("Which way will you go? (left/right/inland):\n")
         if choice_one == "right":
             choice_two()
             break
         elif choice_one == "left":
             choice_eight()
-            print()
             break
         elif choice_one == "inland":
             choice_four()
-            print()
             break
         else:
-            print()
             print("Wrong input. Please type 'left', 'right' or 'inland'.")
-            print()
             continue
 
 
@@ -151,7 +128,7 @@ def choice_two():
     time.sleep(2)
     while True:
         global knife
-        knife = input("Do you take it? (yes/no): ")
+        knife = input("Do you take it? (yes/no):\n")
         if knife == "yes":
             print("Good choice! That might come in handy!")
             break
@@ -161,30 +138,24 @@ def choice_two():
         else:
             print("Wrong input. Please type 'yes' or 'no'.")
             continue
-    print()
     time.sleep(2)
     print("You continue searching the wreckage until it gets dark.")
     time.sleep(2)
-    print()
     while True:
-        choice_three = input("Do you stay or go inland? (stay/go): ")
+        choice_three = input("Do you stay or go inland? (stay/go):\n")
         if choice_three == "stay":
             print("You fell asleep and didn't realise the tide came in.")
             time.sleep(2)
-            print("You were swept away to see with the rest of the wreckage")
-            time.sleep(2)
-            print("and drowned....")
-            print()
+            print("You were swept away to see with the rest of the\n " +
+                  "wreckage and drowned....\n")
             time.sleep(3)
-            print("GAME OVER")
-            print()
+            print("GAME OVER\n")
             play_again()
             break
         elif choice_three == "go":
             choice_four()
             break
         else:
-            print()
             print("Wrong input. Please choose to 'go' or 'stay'.")
             continue
 
@@ -207,55 +178,47 @@ def choice_four():
     time.sleep(2)
     print("You hear movement in the thicket...")
     time.sleep(2)
-    print("You turn around and see...")
+    print("You turn around and see...\n")
     time.sleep(3)
-    print()
-    boar_string = "A BOAR!!!"
+    boar_string = "A BOAR!!!\n"
     for character in boar_string:
         sys.stdout.write(character)
         sys.stdout.flush()
         time.sleep(0.2)
     time.sleep(2)
-    print()
-    print("The beast charges at you! What do you do?!")
+    print("The beast charges at you! What do you do?!\n")
     time.sleep(2)
-    print()
     print("1. Fight it with your bare hands!")
     print("2. Run for your life!")
     if knife == "yes":
         print("3. Throw your knife at it!")
-    print()
     if knife == "yes":
         boar_text = "(1/2/3)"
     else:
         boar_text = "(1/2)"
     while True:
-        choice_five = input(f"What do you do? {boar_text}: ")
-        print()
+        choice_five = input(f"What do you do? {boar_text}:\n")
         if choice_five == "3" and knife == "yes":
             print("Good aim! You caught the boar right between the eyes!")
             time.sleep(2)
-            print("You have pork!")
+            print("You have pork now!")
             global pork
             pork = True
-            print()
             choice_six()
             break
         elif choice_five == "1":
             print("You put up a fight but you're no match for a boar...")
             time.sleep(2)
-            print("The boar gored you and you bled out within minutes...")
-            print()
+            print("The boar gored you and you bled out within minutes...\n")
             time.sleep(3)
-            print("GAME OVER")
-            print()
+            print("GAME OVER\n")
             play_again()
             break
         elif choice_five == "2":
             choice_seven()
             break
         else:
-            print(f"Wrong input. Please choose option {boar_text}")
+            print(f"Wrong input. Please choose option {boar_text}.")
             continue
 
 
@@ -272,63 +235,52 @@ def choice_six():
     time.sleep(2)
     print("You see a cave and decide to inspect it.")
     time.sleep(2)
-    print("Wrong idea... You disturb...")
+    print("Wrong idea... You disturb...\n")
     time.sleep(3)
-    print()
-    bear_string = "A BEAR!!!"
+    bear_string = "A BEAR!!!\n"
     for character in bear_string:
         sys.stdout.write(character)
         sys.stdout.flush()
         time.sleep(0.2)
     time.sleep(2)
-    print()
-    print("Oh no! Think fast! What are your options?")
-    print()
+    print("Oh no! Think fast! What are your options?\n")
     print("1. Fight the bear...")
-    print("2. Run for your life!")
+    print("2. Run for your life!\n")
     if pork is True:
-        print("3. Distract the bear with pork.")
+        print("3. Distract the bear with pork.\n")
     elif flare_gun == "yes":
-        print("3. Scare it off with a flare gun.")
-    print()
+        print("3. Scare it off with a flare gun.\n")
     time.sleep(2)
     if pork is True or flare_gun == "yes":
         bear_text = "(1/2/3)"
     else:
         bear_text = "(1/2)"
     while True:
-        bear_choice = input(f"Which option do you choose? {bear_text}: ")
-        print()
+        bear_choice = input(f"Which option do you choose? {bear_text}:\n")
         if bear_choice == "1":
             print("Nice try but you're no match for the bear. ")
             time.sleep(2)
-            print("You die...")
-            print()
+            print("You die...\n")
             time.sleep(3)
-            print("GAME OVER")
-            print()
+            print("GAME OVER\n")
             play_again()
             break
         elif bear_choice == "2":
             print("You run as fast as you can but you can't outrun the bear.")
             time.sleep(2)
-            print("It catches up with you and mauls you to death...")
+            print("It catches up with you and mauls you to death...\n")
             time.sleep(3)
-            print()
-            print("GAME OVER")
-            print()
+            print("GAME OVER\n")
             play_again()
             break
         elif bear_choice == "3" and pork is True:
             print("You distract the bear with pork and manage to run away.")
             time.sleep(2)
-            print()
             choice_nine()
             break
         elif bear_choice == "3" and flare_gun == "yes":
             print("You scare the bear off with the flare gun!")
             time.sleep(2)
-            print()
             choice_nine()
             break
         else:
@@ -352,14 +304,13 @@ def choice_seven():
     print("You can follow it upstream or downstream.")
     time.sleep(2)
     while True:
-        stream = input("Which direction do you go? (upstream/downstream): ")
+        stream = input("Which direction do you go? (upstream/downstream):\n")
         if stream == "upstream":
             choice_six()
             break
         elif stream == "downstream":
-            print("You eventually end up on the beach")
-            time.sleep(2)
-            print("with plenty of rocks and branches lying around.")
+            print("You eventually end up on the beach\n " +
+                  "with plenty of rocks and branches lying around.")
             time.sleep(2)
             print("You make a sign big enough for passing planes to see.")
             time.sleep(2)
@@ -381,31 +332,27 @@ def mushrooms():
     """
     print("You spot some mushrooms at the edge of the beach.")
     time.sleep(2)
-    print("You know they might be poisonous but you're really hungry.")
+    print("You know they might be poisonous but you're really hungry...")
     time.sleep(2)
     while True:
-        shrooms = input("What do you do? (eat/ignore): ")
+        shrooms = input("What do you do? (eat/ignore):\n")
         if shrooms == "eat":
             print("The plane arrives only to find your dead body.")
             time.sleep(2)
-            print("The mushrooms were poisonous after all...")
+            print("The mushrooms were poisonous after all...\n")
             time.sleep(3)
-            print()
-            print("GAME OVER")
-            print()
+            print("GAME OVER\n")
             play_again()
             break
         elif shrooms == "ignore":
-            print("You ignore the mushrooms and take a sip of water")
-            print("from the stream instead.")
+            print("You ignore the mushrooms and take a sip of water\n " +
+                  "from the stream instead.")
             time.sleep(2)
-            print("Water keeps you alive long enough for the plane")
-            print("to spot and rescue you.")
+            print("Water keeps you alive long enough for the plane\n " +
+                  "to spot and rescue you.\n")
             time.sleep(2)
-            print()
-            print("Well done! YOU WON!!!")
+            print("Well done! YOU WON!!!\n")
             time.sleep(3)
-            print()
             play_again()
             break
         else:
@@ -426,21 +373,16 @@ def choice_eight():
     time.sleep(2)
     while True:
         global flare_gun
-        flare_gun = input("Do you take it with you? (yes/no): ")
+        flare_gun = input("Do you take it with you? (yes/no):\n")
         if flare_gun == "yes":
             print("Good choice! That might come in handy!")
-            print()
             break
         elif flare_gun == "no":
-            print("Well, let's hope you will not live to regret it!")
-            print()
+            print("Well... Let's hope you won't live to regret it!")
             break
         else:
-            print()
             print("Wrong input. Please type 'yes' or 'no'.")
-            print()
             continue
-    print()
     time.sleep(2)
     print("Past the wreckage, a river flows into the ocean.")
     time.sleep(2)
@@ -457,23 +399,17 @@ def choice_nine():
     time.sleep(2)
     print("Suddenly, you see a plane in the sky!")
     time.sleep(2)
-    print()
     if flare_gun == "yes":
         print("You take aim and fire the flare gun to alert the plane.")
         time.sleep(2)
-        print("The plane grows smaller and eventually fades from view...")
-        print()
+        print("The plane grows smaller and eventually fades from view...\n")
         time.sleep(3)
-        print("...but not for long...")
-        print()
+        print("...but not for long...\n")
         time.sleep(3)
-        print("After spotting your signal, the plane comes back.")
-        time.sleep(2)
-        print("You get rescued!!!")
-        print()
+        print("After spotting your signal, the plane comes back/n " +
+              "and you get rescued!\n")
         time.sleep(3)
-        print("Well done! YOU WON!")
-        print()
+        print("Well done! YOU WON!\n")
         play_again()
     else:
         print("You wave frantically but the crew doesn't see you.")
@@ -482,11 +418,10 @@ def choice_nine():
         time.sleep(2)
         print("You are filled with despair...")
         time.sleep(2)
-        print("Unwilling to accept your fate, you jump into a ravine")
-        print()
+        print("Unwilling to accept your fate,\n " +
+              "you jump into a ravine and die...\n")
         time.sleep(3)
-        print("GAME OVER")
-        print()
+        print("GAME OVER\n")
         play_again()
 
 
@@ -498,8 +433,7 @@ def play_again():
     function is called again.
     """
     while True:
-        play_again = input("Would you like to try again? (yes/no): ")
-        print()
+        play_again = input("Would you like to try again? (yes/no):\n\n")
         if play_again == "yes":
             global knife
             knife = "no"
