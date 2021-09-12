@@ -282,12 +282,12 @@ def choice_six():
             elif bear_choice == 3 and pork is True:
                 print("You distract the bear with pork and run away.")
                 time.sleep(2)
-                choice_nine()
+                game_conclusion()
                 break
             elif bear_choice == 3 and flare_gun == "yes":
                 print("You scare the bear off with the flare gun!")
                 time.sleep(2)
-                choice_nine()
+                game_conclusion()
                 break
             else:
                 print(f"Wrong input. Please choose {bear_text}.")
@@ -399,7 +399,7 @@ def choice_eight():
 
 
 # hill top
-def choice_nine():
+def game_conclusion():
     """
     Checks if user picked up the flare gun. If yes, user wins. If no, GAME
     OVER.
