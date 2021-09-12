@@ -81,7 +81,7 @@ def get_username():
     time.sleep(2)
     print("However, the world spins when you try to get up...")
     time.sleep(2)
-    print("You might have a concusion as the details of the crash are blurry.")
+    print("You might have a concusion as details of the crash are blurry.\n")
     time.sleep(2)
     while True:
         name = input("Do you remember who you are? (type name):\n")
@@ -91,7 +91,7 @@ def get_username():
         else:
             print(f"Hello, {name}!")
             break
-    print("The tide is coming in, you should get a move on!")
+    print("\nThe tide is coming in, you should get a move on!")
     time.sleep(2)
     print("You can go left along the shore, right along the shore,\n" +
           "or inland towards higher ground.")
@@ -186,39 +186,44 @@ def choice_four():
         sys.stdout.flush()
         time.sleep(0.2)
     time.sleep(2)
-    print("The beast charges at you! What do you do?!\n")
+    print("\nThe beast charges at you! What do you do?!\n")
     time.sleep(2)
     print("1. Fight it with your bare hands!")
     print("2. Run for your life!")
     if knife == "yes":
         print("3. Throw your knife at it!")
     if knife == "yes":
-        boar_text = "(1/2/3)"
+        boar_text = "(1, 2 or 3)"
     else:
-        boar_text = "(1/2)"
+        boar_text = "(1 or 2)"
     while True:
-        choice_five = input(f"What do you do? {boar_text}:\n")
-        if choice_five == "3" and knife == "yes":
-            print("Good aim! You caught the boar right between the eyes!")
-            time.sleep(2)
-            print("You have pork now!")
-            global pork
-            pork = True
-            choice_six()
-            break
-        elif choice_five == "1":
-            print("You put up a fight but you're no match for a boar...")
-            time.sleep(2)
-            print("The boar gored you and you bled out within minutes...\n")
-            time.sleep(3)
-            print("GAME OVER\n")
-            play_again()
-            break
-        elif choice_five == "2":
-            choice_seven()
-            break
-        else:
-            print(f"Wrong input. Please choose option {boar_text}.")
+        try:
+            choice_five = int(input(f"What do you do? {boar_text}:\n"))
+            if choice_five == 3 and knife == "yes":
+                print("Good aim! You caught the boar right between the eyes!")
+                time.sleep(2)
+                print("You have pork now!")
+                global pork
+                pork = True
+                choice_six()
+                break
+            elif choice_five == 1:
+                print("You put up a fight but you're no match for a boar...")
+                time.sleep(2)
+                print("The boar gored you and you bled out\n" +
+                      "within minutes...\n")
+                time.sleep(3)
+                print("GAME OVER\n")
+                play_again()
+                break
+            elif choice_five == 2:
+                choice_seven()
+                break
+            else:
+                print(f"Wrong number. Please type {boar_text}.")
+                continue
+        except ValueError:
+            print(f"Wrong input. Please type in a number {boar_text}.")
             continue
 
 
@@ -243,7 +248,7 @@ def choice_six():
         sys.stdout.flush()
         time.sleep(0.2)
     time.sleep(2)
-    print("Oh no! Think fast! What are your options?\n")
+    print("\nOh no! Think fast! What are your options?\n")
     print("1. Fight the bear...")
     print("2. Run for your life!\n")
     if pork is True:
@@ -252,39 +257,43 @@ def choice_six():
         print("3. Scare it off with a flare gun.\n")
     time.sleep(2)
     if pork is True or flare_gun == "yes":
-        bear_text = "(1/2/3)"
+        bear_text = "(1, 2 or 3)"
     else:
-        bear_text = "(1/2)"
+        bear_text = "(1 or 2)"
     while True:
-        bear_choice = input(f"Which option do you choose? {bear_text}:\n")
-        if bear_choice == "1":
-            print("Nice try but you're no match for the bear. ")
-            time.sleep(2)
-            print("You die...\n")
-            time.sleep(3)
-            print("GAME OVER\n")
-            play_again()
-            break
-        elif bear_choice == "2":
-            print("You run as fast as you can but you can't outrun the bear.")
-            time.sleep(2)
-            print("It catches up with you and mauls you to death...\n")
-            time.sleep(3)
-            print("GAME OVER\n")
-            play_again()
-            break
-        elif bear_choice == "3" and pork is True:
-            print("You distract the bear with pork and manage to run away.")
-            time.sleep(2)
-            choice_nine()
-            break
-        elif bear_choice == "3" and flare_gun == "yes":
-            print("You scare the bear off with the flare gun!")
-            time.sleep(2)
-            choice_nine()
-            break
-        else:
-            print(f"Wrong input. Please choose {bear_text}.")
+        try:
+            bear_choice = int(input(f"Which do you choose? {bear_text}:\n"))
+            if bear_choice == 1:
+                print("Nice try but you're no match for the bear. ")
+                time.sleep(2)
+                print("You die from your injuries...\n")
+                time.sleep(3)
+                print("GAME OVER\n")
+                play_again()
+                break
+            elif bear_choice == 2:
+                print("You run as fast as you can but you can't outrun it!")
+                time.sleep(2)
+                print("It catches up with you and mauls you to death...\n")
+                time.sleep(3)
+                print("GAME OVER\n")
+                play_again()
+                break
+            elif bear_choice == 3 and pork is True:
+                print("You distract the bear with pork and run away.")
+                time.sleep(2)
+                choice_nine()
+                break
+            elif bear_choice == 3 and flare_gun == "yes":
+                print("You scare the bear off with the flare gun!")
+                time.sleep(2)
+                choice_nine()
+                break
+            else:
+                print(f"Wrong input. Please choose {bear_text}.")
+                continue
+        except ValueError:
+            print(f"Wrong input. Please type in a number {bear_text}.")
             continue
 
 
@@ -433,7 +442,7 @@ def play_again():
     function is called again.
     """
     while True:
-        play_again = input("Would you like to try again? (yes/no):\n\n")
+        play_again = input("Would you like to try again? (yes/no):\n")
         if play_again == "yes":
             global knife
             knife = "no"
@@ -441,10 +450,10 @@ def play_again():
             pork = False
             global flare_gun
             flare_gun = "no"
-            start_game()
+            display_intro()
             break
         elif play_again == "no":
-            print("That's a shame... Thanks for playing!")
+            print("\nThat's a shame... Thanks for playing!\n")
             break
         else:
             print("Wrong input. Please type 'yes' or 'no'.")
