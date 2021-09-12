@@ -6,6 +6,8 @@ STRANDED is a Python terminal game inspired by classic text-based adventure game
 
 The player's goal is to survive and get off a deserted island that they are stranded on after a plane crash. The player's survival depends on the decisions they make during the game.
 
+The game is not aimed at any type of audience in particular but might be especially fun to older players who used to play the original text-based adventure games back in the seventies.  
+
 The live version of my project can be accessed [here](https://stranded.herokuapp.com/).
 
 ## How to play
@@ -18,4 +20,18 @@ To add variety and a bit of difficulty, the player can also choose whether they 
 
 The player wins when they manage to take all the right decisionsneeded to be rescued from the island. If they fail, they will be asked whther they would like to try again. 
 
+## Game Logic Flowchart
 
+![Flowchart](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/flowchart.png)
+
+## Technologies
+
+## Technologies
+
+* Python was used as the programming language to make the game.
+* [LucidChart](https://www.lucidchart.com/pages/) was used to create the flow chart showing the game's logic.
+* [GitHub](https://github.com/) has been used to store the code, images, and other content. 
+* [Heroku](https://dashboard.heroku.com/apps) was used to deploy the game to the web.
+* [Git](https://git-scm.com/) was used to track changes made to the project and to commit and push code to the repository.
+* Python module [time](https://docs.python.org/3/library/time.html) has been used to allow for a delay between lines of text displaying. 
+* Python module [sys](https://docs.python.org/3/library/sys.html) has been used to print a string of text character by character instead of all at one.  

@@ -318,7 +318,7 @@ def choice_seven():
             choice_six()
             break
         elif stream == "downstream":
-            print("You eventually end up on the beach\n " +
+            print("You eventually end up on the beach\n" +
                   "with plenty of rocks and branches lying around.")
             time.sleep(2)
             print("You make a sign big enough for passing planes to see.")
@@ -354,10 +354,10 @@ def mushrooms():
             play_again()
             break
         elif shrooms == "ignore":
-            print("You ignore the mushrooms and take a sip of water\n " +
+            print("You ignore the mushrooms and take a sip of water\n" +
                   "from the stream instead.")
             time.sleep(2)
-            print("Water keeps you alive long enough for the plane\n " +
+            print("Water keeps you alive long enough for the plane\n" +
                   "to spot and rescue you.\n")
             time.sleep(2)
             print("Well done! YOU WON!!!\n")
@@ -427,7 +427,7 @@ def game_conclusion():
         time.sleep(2)
         print("You are filled with despair...")
         time.sleep(2)
-        print("Unwilling to accept your fate,\n " +
+        print("Unwilling to accept your fate,\n" +
               "you jump into a ravine and die...\n")
         time.sleep(3)
         print("GAME OVER\n")
