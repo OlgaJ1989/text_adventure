@@ -415,7 +415,7 @@ def choice_nine():
         time.sleep(3)
         print("...but not for long...\n")
         time.sleep(3)
-        print("After spotting your signal, the plane comes back/n " +
+        print("After spotting your signal, the plane comes back\n " +
               "and you get rescued!\n")
         time.sleep(3)
         print("Well done! YOU WON!\n")
