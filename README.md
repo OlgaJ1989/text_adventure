@@ -50,11 +50,6 @@ When the game first loads, the player is presented with a story and asked whethe
      ![play-again](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/play-again.png)
     
 
-## Game Logic Flowchart
-
-![Flowchart](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/flowchart.png)
-
-
 ## Technologies
 
 * Python was used as the programming language to make the game.
@@ -77,7 +72,28 @@ No errors were found when code passed through the [PEP8](http://pep8online.com/c
 
 ### Bugs / Other
 
-I manually tested the whole gameplay playing through every scenario, especially focusing on the below:
+I manually tested the whole gameplay playing through every scenario, using the below flowchart for reference:
+
+![Flowchart](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/flowchart.png)
+
+#### Steps:
+
+1. Testing game_intro()
+   * I have started my testing with the game_intro() function, making sure it correctly displays the beginning of the story and that time.sleep() delays the printing of following sentences as planned (the default timing has been set to 2 seconds but is changed to 3 in certain parts of the game for dramatic effect). This function and all its elements works as expected and no bugs appear. 
+
+2. Testing start_game() 
+   * In this function, player is asked whether they would like to play or not ("Would you like to find a way to leave the island? (yes/no)). 
+     - When I inputted "yes" into the terminal, the game continued correctly and the get_username() function was called next as expected.
+     - When I inputted "no" into the terminal, the game displayed a Game Over message and the play_again() function was called as expected, allowing the player to start again.
+     - When I inputted other, unexpected words / characters or just left the input blank and pressed Enter, the while loop kicked in, informing me that the input is incorrect and asking for the correct input again, as expected.
+   * Conclusion: This function and all its elements works as expected and no bugs appear.  
+
+
+
+
+
+
+
 1. I have checked that all functions work as expected and lead to correct outputs / choices. 
 2. I have checked that all while loops lead to correct options if user inputs correct option number or display errors if the number is incorrect. I have also made sure that the try/except statement included in two of the while loops displays a ValueError when a number isn't inputted at all.  
 3. I have made sure that the user sees correct options displayed depending on whether they possess (or not) an item they had the chance to pick up earlier in the game (knife/flare gun/pork). If a user is missing the required item when fighting the bear or the boar, they should only see 2 options to save themselves. If the user possesses any of the extra items, they will see 3 choice options instead of 2.

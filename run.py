@@ -51,7 +51,7 @@ def start_game():
     If incorrect input provided, user is asked the question again.
     """
     while True:
-        leave_island = input("Would you like to find a way " +
+        leave_island = input("Would you like to try to find a way " +
                              "to leave the island? (yes/no):\n")
         if leave_island == "no":
             print("\nWell, it was nice knowing you...")
