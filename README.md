@@ -22,41 +22,38 @@ When the game first loads, the player is presented with a story and asked whethe
 
 ## Features  
 
-1. The opportunity to customise the game with user's own name. 
-   When the program is first run, the player is presented with the intro to the story and then asked whether they would like to play ("Would you like to find a way to leave the island?"). If the answer is "yes", the player is asked to provide a username and the game continues from there.
+1. The opportunity to customise the game with user's own name.
+   * When the program is first run, the player is presented with the intro to the story and then asked whether they would like to play ("Would you like to find a way to leave the island?"). If the answer is "yes", the player is asked to provide a username and the game continues from there.
 
-   ![name](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/name.png)
+     ![name](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/name.png)
 
 2. User has the power over where the story goes as the plot changes based on the choices the user makes.
-   The way the game works is very simple and requires minimal controls. The player follows the story until they are given a choice (this might refer to actions they want to take, directions they want to go, etc.). When they make a choice, the story continues and what happens next depends on the choices they just made (e.g. if the player starts the game by going "left", they end up on a different part of the beach, and if the player goes "inland", they find a forest).
+   * The way the game works is very simple and requires minimal controls. The player follows the story until they are given a choice (this might refer to actions they want to take, directions they want to go, etc.). When they make a choice, the story continues and what happens next depends on the choices they just made (e.g. if the player starts the game by going "left", they end up on a different part of the beach, and if the player goes "inland", they find a forest).
 
-   ![choice](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/choice.png)
+     ![choice](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/choice.png)
 
 3. User can lower or improve their chances of winning by deciding to pick up (or not) an object.
-   To add variety and a bit of difficulty, the player can choose whether they want to pick up certain objects they find at certain points of the game. If they pick up everything they encounter, chances are they will be presented with more choices for survival. For example, in one of the scenarios, the player ends up on the top of the hill and spots a plane. If they picked up a flare gun earlier in the game, they can signal the plane and get rescued which leads to a WIN. If they didn't pick the flare gun up, they cannot use it and the plane never comes which results in a GAME OVER. 
+   * To add variety and a bit of difficulty, the player can choose whether they want to pick up certain objects they find at certain points of the game. If they pick up everything they encounter, chances are they will be presented with more choices for survival. For example, in one of the scenarios, the player ends up on the top of the hill and spots a plane. If they picked up a flare gun earlier in the game, they can signal the plane and get rescued which leads to a WIN. If they didn't pick the flare gun up, they cannot use it and the plane never comes which results in a GAME OVER. 
 
-   ![flare-gun](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/flare-gun.png) 
+     ![flare-gun](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/flare-gun.png) 
 
 4. Win and loss announcements.
-   Every time a player looses or wins a scenario, they are presented with a win or loss announcement.
+   * Every time a player looses or wins a scenario, they are presented with a win or loss announcement.
 
-   ![loss](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/loss.png) 
+     ![loss](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/loss.png) 
 
-   ![win](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/win.png) 
+     ![win](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/win.png) 
 
 5. Option to restart the game whether the player looses or wins.
-   No matter what the outcome for the player is, they will be able to restart the game and explore different scenarios.
+   * No matter what the outcome for the player is, they will be able to restart the game and explore different scenarios.
 
-   ![play-again](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/play-again.png)
-
-
-
-
+     ![play-again](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/play-again.png)
     
 
 ## Game Logic Flowchart
 
 ![Flowchart](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/flowchart.png)
+
 
 ## Technologies
 
@@ -67,7 +64,8 @@ When the game first loads, the player is presented with a story and asked whethe
 * [Git](https://git-scm.com/) was used to track changes made to the project and to commit and push code to the repository.
 * Python module [time](https://docs.python.org/3/library/time.html) has been used to allow for a delay between lines of text displaying. 
 * Python module [sys](https://docs.python.org/3/library/sys.html) has been used to print a string of text character by character instead of all at one.  
-* [Xbox Game Bar](https://www.microsoft.com/en-us/p/xbox-game-bar/9nzkpstsnw4p?activetab=pivot:overviewtab) was used to records the screen and [ezgif.com](https://ezgif.com/video-to-gif) was used to convert a part of it to a gif for the Readme.md intro.
+* [Xbox Game Bar](https://www.microsoft.com/en-us/p/xbox-game-bar/9nzkpstsnw4p?activetab=pivot:overviewtab) was used to records the screen and [ezgif.com](https://ezgif.com/video-to-gif) was used to convert a part of it to a gif for the Readme file intro.
+
 
 ## Testing
 
@@ -86,6 +84,7 @@ I manually tested the whole gameplay playing through every scenario, especially 
 
 No errors or bugs were found when above testing was carried out. All functions, loops and other structures work as expected.  
 
+
 ## Deployment
 
 The below steps were followed to deploy this project to Heroku:
@@ -97,6 +96,7 @@ The below steps were followed to deploy this project to Heroku:
 Once GitHub is chosen, find your repository and connect it to Heroku.
 6. Scroll down to Manual Deploy, make sure the "main" branch is selected and click "Deploy Branch". 
 7. The deployed app can be found [here](https://stranded.herokuapp.com/).
+
 
 ## Credits
 
