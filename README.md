@@ -79,15 +79,25 @@ I manually tested the whole gameplay playing through every scenario, using the b
 #### Steps:
 
 1. Testing game_intro()
-   * I have started my testing with the game_intro() function, making sure it correctly displays the beginning of the story and that time.sleep() delays the printing of following sentences as planned (the default timing has been set to 2 seconds but is changed to 3 in certain parts of the game for dramatic effect). This function and all its elements works as expected and no bugs appear. 
+   * I have started my testing with the game_intro() function, making sure it correctly displays the beginning of the story and that time.sleep() delays the printing of following sentences as planned (the default timing has been set to 2 seconds but is changed to 3 in certain parts of the game for dramatic effect). This function and all its elements work as expected and no bugs appear. 
 
 2. Testing start_game() 
    * In this function, player is asked whether they would like to play or not ("Would you like to find a way to leave the island? (yes/no)). 
-     - When I inputted "yes" into the terminal, the game continued correctly and the get_username() function was called next as expected.
-     - When I inputted "no" into the terminal, the game displayed a Game Over message and the play_again() function was called as expected, allowing the player to start again.
-     - When I inputted other, unexpected words / characters or just left the input blank and pressed Enter, the while loop kicked in, informing me that the input is incorrect and asking for the correct input again, as expected.
-   * Conclusion: This function and all its elements works as expected and no bugs appear.  
+      - When I inputted "yes" into the terminal, the game continued correctly and the get_username() function was called next as expected.
+      - When I inputted "no" into the terminal, the game displayed a Game Over message and the play_again() function was called as expected, allowing the player to start again.
+      - When I inputted other, unexpected words / characters or just left the input blank and pressed Enter, the while loop kicked in, informing me that the input is incorrect and asking for the correct input again, as expected.
+   * Conclusion: This function and all its elements work as expected and no bugs appear.  
 
+3. Testing get_username()
+   * In this function, player is asked to provide a username ("Do you remember who you are? (type name)). They can input anything but a blank input.
+      - When I inputted my name or any other word / character, an f-string was correctly printed with the chosen value ("Hello, {value}") and the game then proceeded correctly with the next part of the story.
+      - When I tried to submit an empty input by not typing anything in and just pressing Enter, the while loop kicked in, informing me that the input is incorrect and asking for the correct input again, as expected.
+   * After inputting the username, the function continued with the story until I was asked to choose a direction ("Which way will you go? (left/right/inland)).
+      - When I chose "left", function choice_eight() was called as expected.  
+      - When I chose "right", function choice_two() was called as expected.  
+      - When I chose "inland", function choice_four() was called as expected.
+      - When I inputted other, unexpected words / characters or just left the input blank and pressed Enter, the while loop kicked in, informing me that the input is incorrect and asking for the correct input again, as expected.  
+   * Conclusion: This function and all its elements work as expected and no bugs appear.
 
 
 
