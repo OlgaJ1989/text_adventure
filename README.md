@@ -113,9 +113,9 @@ I manually tested the whole gameplay playing through every scenario, using the b
 5. Testing choice_four()
    * When this function is called, the player encounters a boar and is presented with a few options of what they can do in order to try to survive the encounter. The amount of choices the player is given depends on whether they have a knife with them or not (knife can be picked up in choice_two()). If they don't have the knife, they will see 2 choices (to run or to fight with their bare hands). However, if the knife is present, option 3 will appear (throw the knife).
       - To test this is true, I have started the game again, making sure to pick up the knife in choice_two(). I have then made the choice to go inland as this would lead me to the boar. Once I encountered the beast, I expected to see 3 choices and I did, meaning the code works properly. 
-      - Next, I have restarted again, making sure NOT to pick up the knife in choice_two(). I have then made the choice to go inland as this would lead me to the boar. Once I encountered the beast, I expected to see only 2 choices choices and I did, meaning the code works properly.
+      - Next, I have restarted again, making sure NOT to pick up the knife in choice_two(). I have then made the choice to go inland as this would lead me to the boar. Once I encountered the beast, I expected to see only 2 choices and I did, meaning the code works properly.
       - After making sure the proper choices appear depending on whether theknife is present or not, I proceeded with testing the 3 survival choices related to the bear.
-      - When I chose "1" (fight with bare hands), the game lead to a Game Over scenario and the play_again() function was called as expected, allowing me to start again.
+      - When I chose "1" (fight with bare hands), the game led to a Game Over scenario and the play_again() function was called as expected, allowing me to start again.
       - When I chose "2" (run), function choice_seven() was called as expected.
       - When I chose "3" (throw knife), I obtained pork which will affect later decisions similarly to the knife. After that, function choice_six() was called as planned.
       - Note that the above choices require an input of an integer for which reason there are two differnt errors displaying if input is incorrect.
@@ -124,20 +124,48 @@ I manually tested the whole gameplay playing through every scenario, using the b
    * Conclusion: This function and all its elements work as expected and no bugs appear.
 
 6. Testing choice_six()
-           
+   * When this function is called, the player encounters a bear and is presented with a few options of what they can do in order to try to survive the encounter (similarly to what happened with the boar encounter). The amount of choices the player is given depends on whether they have (or not) a flare gun or pork with them (pork can be obtained in choice_four(), flare gun can be picked up in choice_eight()). If they don't have either of these items, they will see 2 choices (to run or to fight with their bare hands). However, if the pork OR flare gun is present, option 3 will appear (distract with pork OR scare off with flare gun - it is not possible to have both items at the same time at any point in the game).
+      - To test this is true, I have played the game, making sure to pick up the flare gun in choice_eight(). I have then continued with the choices that would lead me to the bear. Once I encountered the beast, I expected to see 3 choices and I did, meaning the code works properly. 
+      - Next, I have restarted again, making sure NOT to pick up the flare gun in choice_eight(). I have then made choices that would lead me to the bear. Once I encountered the beast, I expected to see only 2 choices and I did, meaning the code works properly.
+      - Then, I have restarted again, making sure to obtain the pork from the fight with the boar (choice_four()). I have then continued with the choices that would lead me to the bear. Once I encountered the beast, I expected to see 3 choices and I did, meaning the code works properly.
+      - As before, I have then played again, making sure not to obtain the pork in the boar encounter (choice_four()). I have then made choices that would lead me to the bear. Once I encountered the beast, I expected to see only 2 choices and I did, meaning the code works properly.
+      - After making sure the proper choices appear depending on whether the pork / flare gun are present or not, I proceeded with testing the 4 survival choices related to the bear.
+      - When I chose "1" (fight with bare hands), the game led to a Game Over scenario and the play_again() function was called as expected, allowing me to start again.
+      - When I chose "2" (run), the game lead to a Game Over scenario and the play_again() function was called as expected, allowing me to start again.
+      - When I chose "3" (distract with pork), function game_conclusion() was called as expected.
+      - When I chose "3" (scare off with flare gun), function game_conclusion() was called as expected.
+      - Note that the above choices require an input of an integer for which reason there are two different errors displaying if input is incorrect.
+      - First error notification: when I tried submitting an empty space or a non-integer character, the ValueError option kicked in, informing me of the wrong input and that the correct one has to be a number. This works as expected. 
+      - Second error notification: When I tried submitting a number that isn't the required 1, 2 or 3, I received another error message informing me of the wrong input and that the right one can only be 1, 2 or 3. This works as expected.
+   * Conclusion: This function and all its elements work as expected and no bugs appear. 
 
+7. Testing choice_seven()
+   * In this function, the player is asked whether they would like to go downstream or upstream ("Which direction do you go? (upstream/downstream)).
+      - When I typed "upstream" into the terminal, the game continued correctly and the choice_six() function was called as expected.
+      - When I typed "donwstream" into the terminal, the game continued correctly and the mushrooms() function was called as expected.
+      - When I inputted other, unexpected words / characters or just left the input blank and pressed Enter, the while loop kicked in, informing me that the input is incorrect and asking for the correct input again, as expected.
+   * Conclusion: This function and all its elements work as expected and no bugs appear.  
 
+8. Testing mushrooms()
+   * In this function, the user is asked whether they would like to eat mushrooms they found on the beach ("What do you do? (eat/ignore)").
+     - When I typed "eat" into the terminal, the game led to a Game Over scenario and the play_again() function was called as expected, allowing me to start again.
+     - When I typed "eat" into the terminal, the game led to a Win scenario and the play_again() function was called as expected, allowing me to start again.
+     - When I inputted other, unexpected words / characters or just left the input blank and pressed Enter, the while loop kicked in, informing me that the input is incorrect and asking for the correct input again, as expected.
+   * Conclusion: This function and all its elements work as expected and no bugs appear.
 
+9. Testing choice_eight()
+   * In this function, the user is asked whether they would like to pick up a flare gun they find in the cockpit ("Do you take it with you? (yes/no)").  
+      - When I typed "yes", the game moved to the next part of the story within the same function, as expected. Function choice_six() was called.
+      - When I typed "no", the game moved to the next part of the story within the same function, as expected. Function choice_six() was called.
+      - When I inputted other, unexpected words / characters or just left the input blank and pressed Enter, the while loop kicked in, informing me that the input is incorrect and asking for the correct input again, as expected. 
+   * Conclusion: This function and all its elements work as expected and no bugs appear. 
 
-
-
-
-1. I have checked that all functions work as expected and lead to correct outputs / choices. 
-2. I have checked that all while loops lead to correct options if user inputs correct option number or display errors if the number is incorrect. I have also made sure that the try/except statement included in two of the while loops displays a ValueError when a number isn't inputted at all.  
-3. I have made sure that the user sees correct options displayed depending on whether they possess (or not) an item they had the chance to pick up earlier in the game (knife/flare gun/pork). If a user is missing the required item when fighting the bear or the boar, they should only see 2 options to save themselves. If the user possesses any of the extra items, they will see 3 choice options instead of 2.
-
-No errors or bugs were found when above testing was carried out. All functions, loops and other structures work as expected.  
-
+10. Testing game_conclusion()
+   * Unlike others, this is not a 'choice' function - it simply prints two different endings to the story. 
+      - If a player had the chance to pick up the flare gun at any point in the game, the game automatically displays a Win scenario where the flare gun is used to signal the plane leading to a rescue.
+      - If no flare gun is present, the game automatically displays a Game Over scenario where the plane doesn't spot them and they commit suicide in desperation.    
+   * Conclusion: This function and all its elements work as expected and no bugs appear.
+   
 
 ## Deployment
 
