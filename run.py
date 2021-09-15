@@ -146,7 +146,7 @@ def choice_two():
         if choice_three == "stay":
             print("\nYou fell asleep and didn't realise the tide came in.")
             time.sleep(2)
-            print("You were swept away to see with the rest of the\n " +
+            print("You were swept away to see with the rest of the\n" +
                   "wreckage and drowned....\n")
             time.sleep(3)
             print("GAME OVER\n")
@@ -198,7 +198,7 @@ def choice_four():
         boar_text = "(1 or 2)"
     while True:
         try:
-            choice_five = int(input(f"What do you do? {boar_text}:"))
+            choice_five = int(input(f"What choice do you make? {boar_text}:"))
             if choice_five == 3 and knife == "yes":
                 print("\nGood aim! You caught it right between the eyes!")
                 time.sleep(2)

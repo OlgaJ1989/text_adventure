@@ -84,7 +84,7 @@ I manually tested the whole gameplay playing through every scenario, using the b
 2. Testing start_game() 
    * In this function, player is asked whether they would like to play or not ("Would you like to find a way to leave the island? (yes/no)). 
       - When I inputted "yes" into the terminal, the game continued correctly and the get_username() function was called next as expected.
-      - When I inputted "no" into the terminal, the game displayed a Game Over message and the play_again() function was called as expected, allowing the player to start again.
+      - When I inputted "no" into the terminal, the game displayed a Game Over message and the play_again() function was called as expected, allowing me to start again.
       - When I inputted other, unexpected words / characters or just left the input blank and pressed Enter, the while loop kicked in, informing me that the input is incorrect and asking for the correct input again, as expected.
    * Conclusion: This function and all its elements work as expected and no bugs appear.  
 
@@ -98,6 +98,19 @@ I manually tested the whole gameplay playing through every scenario, using the b
       - When I chose "inland", function choice_four() was called as expected.
       - When I inputted other, unexpected words / characters or just left the input blank and pressed Enter, the while loop kicked in, informing me that the input is incorrect and asking for the correct input again, as expected.  
    * Conclusion: This function and all its elements work as expected and no bugs appear.
+
+4. Testing choice_two()
+   * In this function, the user is asked whether they would like to pick up a knife they find in the wreckage ("Do you take it? (yes/no)").  
+      - When I typed "yes", the game moved to the next part of the story within the same function, as expected.
+      - When I typed "no", the game moved to the next part of the story within the same function, as expected.
+      - When I inputted other, unexpected words / characters or just left the input blank and pressed Enter, the while loop kicked in, informing me that the input is incorrect and asking for the correct input again, as expected. 
+   * After the 'knife choice' section, the story continued for a bit until I was asked whether I would like to spend the night in the wreckage or go elsewhere ("Do you stay or go inland? (stay/go)")  
+      - When I typed "stay" into the terminal, the game lead to a Game Over scenario the play_again() function was called as expected, allowing me to start again. 
+      - When I typed "go", function choice_four() was called as expected.
+      - When I inputted other, unexpected words / characters or just left the input blank and pressed Enter, the while loop kicked in, informing me that the input is incorrect and asking for the correct input again, as expected. 
+   * Conclusion: This function and all its elements work as expected and no bugs appear.
+
+5. Testing choice_four()
 
 
 
