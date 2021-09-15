@@ -168,8 +168,8 @@ I manually tested the whole gameplay playing through every scenario, using the b
 
 11. Testing play_again()
     * This function is called every time a player loses or wins a scenario and it allows to load the game again ("Would you like to try again? (yes/no)"). 
-       - When I typed "yes" into the terminal, the function display_intro() was called and the game started again.
-       - When I typed "no", I was presented with "That's a shame... Thanks for playing!" and wasn't asked again. 
+       - When I typed "yes" into the terminal, the function display_intro() was called and the game started again, as expected.
+       - When I typed "no", I was presented with "That's a shame... Thanks for playing!" and wasn't asked again, as expected. 
        - When I inputted other, unexpected words / characters or just left the input blank and pressed Enter, the while loop kicked in, informing me that the input is incorrect and asking for the correct input again, as expected. 
     * Conclusion: This function and all its elements work as expected and no bugs appear.
 
