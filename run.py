@@ -290,7 +290,7 @@ def choice_six():
                 game_conclusion()
                 break
             else:
-                print(f"Wrong input. Please choose {bear_text}.")
+                print(f"Wrong number. Please choose {bear_text}.")
                 continue
         except ValueError:
             print(f"Wrong input. Please type in a number {bear_text}.")
