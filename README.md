@@ -28,7 +28,7 @@ When the game first loads, the player is presented with a story and asked whethe
      ![name](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/name.png)
 
 2. User has the power over where the story goes as the plot changes based on the choices the user makes.
-   * The way the game works is very simple and requires minimal controls. The player follows the story until they are given a choice (this might refer to actions they want to take, directions they want to go, etc.). When they make a choice, the story continues and what happens next depends on the choices they just made (e.g. if the player starts the game by going "left", they end up on a different part of the beach, and if the player goes "inland", they find a forest).
+   * The way the game works is very simple and requires minimal controls. The player follows the story until they are given a choice (this might refer to actions they want to take, directions they want to go, etc.). When they make a choice, the story continues and what happens next depends on the choices they just made (e.g., if the player starts the game by going "left", they end up on a different part of the beach, and if the player goes "inland", they find a forest).
 
      ![choice](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/choice.png)
 
@@ -44,7 +44,7 @@ When the game first loads, the player is presented with a story and asked whethe
 
      ![win](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/win.png) 
 
-5. Option to restart the game whether the player looses or wins.
+5. Option to restart the game whether the player loses or wins.
    * No matter what the outcome for the player is, they will be able to restart the game and explore different scenarios.
 
      ![play-again](https://github.com/OlgaJ1989/text_adventure/blob/main/Docs/play-again.png)
@@ -163,9 +163,9 @@ I manually tested the whole gameplay playing through every scenario, using the b
 10. Testing game_conclusion()
    * Unlike others, this is not a 'choice' function - it simply prints two different endings to the story. 
       - If a player had the chance to pick up the flare gun at any point in the game, the game automatically displays a Win scenario where the flare gun is used to signal the plane leading to a rescue.
-      - If no flare gun is present, the game automatically displays a Game Over scenario where the plane doesn't spot them and they commit suicide in desperation.    
+      - If no flare gun is present, the game automatically displays a Game Over scenario where the plane doesn't spot them, and they commit suicide in desperation.    
    * Conclusion: This function and all its elements work as expected and no bugs appear.
-   
+
 
 ## Deployment
 
@@ -183,3 +183,5 @@ Once GitHub is chosen, find your repository and connect it to Heroku.
 ## Credits
 
 The mock terminal used to host the game has been created by Code institute.
+
+The code is custom and written entirely by me and the story is of my own idea.
