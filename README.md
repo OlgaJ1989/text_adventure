@@ -161,10 +161,10 @@ I manually tested the whole gameplay playing through every scenario, using the b
    * Conclusion: This function and all its elements work as expected and no bugs appear. 
 
 10. Testing game_conclusion()
-   * Unlike others, this is not a 'choice' function - it simply prints two different endings to the story. 
-      - If a player had the chance to pick up the flare gun at any point in the game, the game automatically displays a Win scenario where the flare gun is used to signal the plane leading to a rescue.
-      - If no flare gun is present, the game automatically displays a Game Over scenario where the plane doesn't spot them, and they commit suicide in desperation.    
-   * Conclusion: This function and all its elements work as expected and no bugs appear.
+    * Unlike others, this is not a 'choice' function - it simply prints two different endings to the story. 
+       - If a player had the chance to pick up the flare gun at any point in the game, the game automatically displays a Win scenario where the flare gun is used to signal the plane leading to a rescue. When I played the game making sure to pick up the flare gun when prompted, I reached the game_conclusion() stage and a Win scenario was triggered, as expected.
+       - If no flare gun is present, the game automatically displays a Game Over scenario where the plane doesn't spot them, and they commit suicide in desperation. When I played the game making sure NOT to pick up the flare gun when prompted, I reeached the game_conclusion() stage and a Game Over scenario was triggered, as expected.     
+    * Conclusion: This function and all its elements work as expected and no bugs appear.
 
 
 ## Deployment
