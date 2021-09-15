@@ -105,12 +105,27 @@ I manually tested the whole gameplay playing through every scenario, using the b
       - When I typed "no", the game moved to the next part of the story within the same function, as expected.
       - When I inputted other, unexpected words / characters or just left the input blank and pressed Enter, the while loop kicked in, informing me that the input is incorrect and asking for the correct input again, as expected. 
    * After the 'knife choice' section, the story continued for a bit until I was asked whether I would like to spend the night in the wreckage or go elsewhere ("Do you stay or go inland? (stay/go)")  
-      - When I typed "stay" into the terminal, the game lead to a Game Over scenario the play_again() function was called as expected, allowing me to start again. 
+      - When I typed "stay" into the terminal, the game lead to a Game Over scenario and the play_again() function was called as expected, allowing me to start again. 
       - When I typed "go", function choice_four() was called as expected.
       - When I inputted other, unexpected words / characters or just left the input blank and pressed Enter, the while loop kicked in, informing me that the input is incorrect and asking for the correct input again, as expected. 
    * Conclusion: This function and all its elements work as expected and no bugs appear.
 
 5. Testing choice_four()
+   * When this function is called, the player encounters a boar and is presented with a few options of what they can do in order to try to survive the encounter. The amount of choices the player is given depends on whether they have a knife with them or not (knife can be picked up in choice_two()). If they don't have the knife, they will see 2 choices (to run or to fight with their bare hands). However, if the knife is present, option 3 will appear (throw the knife).
+      - To test this is true, I have started the game again, making sure to pick up the knife in choice_two(). I have then made the choice to go inland as this would lead me to the boar. Once I encountered the beast, I expected to see 3 choices and I did, meaning the code works properly. 
+      - Next, I have restarted again, making sure NOT to pick up the knife in choice_two(). I have then made the choice to go inland as this would lead me to the boar. Once I encountered the beast, I expected to see only 2 choices choices and I did, meaning the code works properly.
+      - After making sure the proper choices appear depending on whether theknife is present or not, I proceeded with testing the 3 survival choices related to the bear.
+      - When I chose "1" (fight with bare hands), the game lead to a Game Over scenario and the play_again() function was called as expected, allowing me to start again.
+      - When I chose "2" (run), function choice_seven() was called as expected.
+      - When I chose "3" (throw knife), I obtained pork which will affect later decisions similarly to the knife. After that, function choice_six() was called as planned.
+      - Note that the above choices require an input of an integer for which reason there are two differnt errors displaying if input is incorrect.
+      - First error notification: when I tried submitting an empty space or a non-integer character, the ValueError option kicked in, informing me of the wrong input and that the correct one has to be a number. This works as expected. 
+      - Second error notification: When I tried submitting a number that isn't the required 1, 2 or 3, I received another error message informing me of the wrong input and that the right one can only be 1, 2 or 3. This works as expected.
+   * Conclusion: This function and all its elements work as expected and no bugs appear.
+
+6. Testing choice_six()
+           
+
 
 
 
