@@ -8,7 +8,7 @@ The player's goal is to survive and get off a deserted island that they are stra
 
 The game is not aimed at any type of audience in particular but might be especially fun to older players who used to play the original text-based adventure games back in the seventies.  
 
-The live version of my project can be accessed [here](https://stranded.herokuapp.com/).
+The live version of my project can be accessed [here](https://stranded-e3x8.onrender.com/).
 
 
 ## How to play
